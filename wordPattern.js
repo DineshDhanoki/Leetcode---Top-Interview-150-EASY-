@@ -1,22 +1,14 @@
-function wordPattern(pattern, s){
-    const patternMap = {}
-    const wordMap = {}
-    const words = s.split(' ')
-
-    if(pattern.length !== words.length){
+function wordPattern(pattern,s){
+    const arr = s.split(' '),template={}
+    
+    if(pattern.length !== arr.length || new Set([...pattern]).size !== new Set(arr).size)
         return false
-    }
 
-    for(let i=0; i<pattern.length; i++){
-        const char = pattern[i]
-        const word = words[i]
-
-        if((patternMap[char] !== undefined && patternMap[char] !== word) ||
-        (wordMap[word] !== undefined && wordMap[word] !== char)){
+    for (let i=0; i<pattern.length; i++){
+        if(!template[pattern[i]]) {template[pattern[i]] = arr[i]}
+        else if (template[pattern[i] !== arr[i]]){
             return false
         }
-        patternMap[char] = word
-        wordMap[word] = char
     }
     return true
 }
