@@ -1,7 +1,7 @@
 function containsDuplicate(nums, k){
     const numMap = new Map()
 for(let i=0; i<nums.length; i++){
-    if(numMap.has(nums[i]) && numMap.get(nums[i]) <= k){
+    if(numMap.has(nums[i]) && 1 - numMap.get(nums[i]) <= k){
         return true
 }
 numMap.set (nums[i],i)
