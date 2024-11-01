@@ -7,7 +7,7 @@ class TreeNode{
 }
 
 function pathSum(root, targetSum){
-    if(root === 0){
+    if(root === null){
         return false
     }
 
