@@ -7,6 +7,8 @@ class TreeNode{
 }
 
 function countNodes(root){
+    if(root === null) return 0
+
     let leftDepth = getDepth(root.left)
     let rightDepth = getDepth(root.right)
 
