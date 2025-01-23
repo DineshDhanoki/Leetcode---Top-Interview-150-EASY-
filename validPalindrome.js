@@ -1,5 +1,5 @@
-function isPlaindrome(s){
-    const cleanString = s.toLowerCase().replace(/[^a-zA-Z0-9]/g, '')
+function isPlaindrome(x){
+    const cleanString = x.toLowerCase().replace(/[^a-zA-Z0-9]/g, '')
     return (cleanString === cleanString.split('').reverse().join(''))
 }
 
